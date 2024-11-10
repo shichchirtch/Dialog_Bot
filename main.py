@@ -7,7 +7,6 @@ from start_menu import set_main_menu
 from admin_dialog import admin_dialog
 
 
-
 async def main():
 
     dp.startup.register(set_main_menu)

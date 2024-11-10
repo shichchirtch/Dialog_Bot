@@ -1,5 +1,5 @@
 from aiogram_dialog import Dialog, StartMode, Window
-from getters import get_languages, get_spam,  get_skills
+from getters import get_languages, get_spam,  get_skills, get_anketa
 from bot_instans import FSM_ST, ANKETA, VAC
 from aiogram_dialog.widgets.text import Const, Format
 from aiogram_dialog.widgets.kbd import Button, Row,  Column, Multiselect, Radio, Next, Start
@@ -137,6 +137,7 @@ Window( # Окно показывает виджет с мультиселект
               state=FSM_ST.basic,
               mode=StartMode.RESET_STACK),
         state=ANKETA.finish,
+        getter=get_anketa
     ),
 )
 

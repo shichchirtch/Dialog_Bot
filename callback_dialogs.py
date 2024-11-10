@@ -27,6 +27,7 @@ async def radio_spam_button_clicked(callback: CallbackQuery,
                                     radio: ManagedRadio,
                                     dialog_manager: DialogManager, *args, **kwargs):
     temp_dict = {'1': 'Ну и ладно', '2': 'Очень хорошо'}
+    print(callback.data)
     await callback.message.answer(f"{temp_dict[callback.data[-1]]}")
     dialog_manager.show_mode = ShowMode.SEND
     await dialog_manager.next()
@@ -35,6 +36,7 @@ async def radio_spam_button_clicked(callback: CallbackQuery,
 async def category_filled(callback: CallbackQuery, checkbox: ManagedMultiselect, dialog_manager: DialogManager, *args,
                           **kwargs):
     choose = checkbox.get_checked()
+    print('choose = ', choose)
     dialog_dict = dialog_manager.dialog_data
     dialog_dict['skills'] = choose
 
@@ -46,6 +48,7 @@ async def on_confirm_clicked(callback: CallbackQuery, button: Button, dialog_man
     else:
         await callback.message.answer("Выберите хотя бы один скил", show_alert=True)
 
+###########################################ADMIN#######################################################
 
 async def button_skolko(callback: CallbackQuery, widget: Button, dialog_manager: DialogManager, *args, **kwargs):
     await callback.message.answer(f'Количество запусков бота {len(users_db)}')
