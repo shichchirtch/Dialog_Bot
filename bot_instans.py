@@ -32,7 +32,7 @@ class ADMIN(StatesGroup):
     first = State()
 
 
-BOT_TOKEN = '<BOT_TOKEN>'
+BOT_TOKEN = '6471784185:AAEWakBbPrU-bKGGanxahUq__ZbyZ1s8dBI'
 
 bot = Bot(token=BOT_TOKEN,
               default=DefaultBotProperties(parse_mode=ParseMode.HTML))
